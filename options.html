@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LeetCode Timer — Settings</title>
+<link rel="stylesheet" href="page.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>LeetCode Practice Timer</h1>
+
+    <section>
+      <h2>1. Save folder</h2>
+      <p>Pick your <b>Job Search</b> project folder. Attempts are written to a subfolder inside it, so Claude can read them.</p>
+      <div class="folder">
+        <button id="pick" class="primary">Choose folder…</button>
+        <span id="folderName" class="muted">No folder chosen</span>
+      </div>
+      <p id="permNote" class="note hidden"></p>
+      <label>Subfolder <input id="subfolder" type="text"></label>
+    </section>
+
+    <section>
+      <h2>2. Time limits (minutes)</h2>
+      <div class="limits">
+        <label><span class="pill Easy">Easy</span><input id="Easy" type="number" min="5" max="120" step="5"></label>
+        <label><span class="pill Medium">Medium</span><input id="Medium" type="number" min="5" max="120" step="5"></label>
+        <label><span class="pill Hard">Hard</span><input id="Hard" type="number" min="5" max="120" step="5"></label>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. File contents</h2>
+      <label class="check"><input id="includeStatement" type="checkbox"> Include the problem statement in each saved file</label>
+    </section>
+
+    <section>
+      <h2>Test it</h2>
+      <p>Writes a small test file to confirm the folder works.</p>
+      <button id="test">Write test file</button>
+      <span id="testResult" class="muted"></span>
+    </section>
+
+    <p id="savedMsg" class="muted"></p>
+  </div>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

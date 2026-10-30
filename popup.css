@@ -1,0 +1,37 @@
+:root {
+  --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --line: #e4e7eb; --card: #f6f8fa;
+  --accent: #1a73e8; --accent-fg: #fff; --danger: #d93025;
+  --easy: #00a86b; --medium: #f0a000; --hard: #e5484d;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #1e1f22; --fg: #e8eaed; --muted: #9aa0a6; --line: #34363a; --card: #26282c; --accent: #8ab4f8; --accent-fg: #0b1220; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; width: 300px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--fg); }
+header { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.brand { font-weight: 600; }
+button { font: inherit; cursor: pointer; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--fg); padding: 8px 12px; }
+button.icon { border: none; background: none; font-size: 16px; padding: 2px 4px; color: var(--muted); }
+button.primary { background: var(--accent); color: var(--accent-fg); border-color: transparent; font-weight: 600; width: 100%; padding: 10px; font-size: 14px; }
+button.ghost { background: none; }
+button:disabled { opacity: .5; cursor: default; }
+main { padding: 14px; }
+.hidden { display: none !important; }
+.warn { margin: 10px 14px 0; padding: 8px 10px; border-radius: 8px; background: #fff4e5; color: #8a5300; font-size: 12px; }
+@media (prefers-color-scheme: dark) { .warn { background: #3a2c12; color: #f6c76b; } }
+.warn a { color: inherit; font-weight: 600; }
+.title { font-size: 15px; font-weight: 600; margin: 0 0 6px; }
+.meta { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+.pill { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; color: #fff; }
+.pill.Easy { background: var(--easy); } .pill.Medium { background: var(--medium); } .pill.Hard { background: var(--hard); }
+.tag { font-size: 11px; color: var(--muted); background: var(--card); padding: 2px 6px; border-radius: 6px; }
+.timebox { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 6px 0 4px; }
+.timebox button { width: 34px; height: 34px; padding: 0; border-radius: 50%; font-size: 16px; }
+.clock { font-variant-numeric: tabular-nums; font-size: 34px; font-weight: 650; letter-spacing: -.5px; min-width: 110px; text-align: center; }
+.clock.over { color: var(--danger); }
+.hint { text-align: center; color: var(--muted); font-size: 12px; margin-bottom: 12px; }
+.row { display: flex; gap: 8px; margin-top: 8px; }
+.row button { flex: 1; }
+.saved { margin-top: 10px; font-size: 12px; padding: 8px 10px; border-radius: 8px; background: var(--card); word-break: break-all; }
+.saved.err { color: var(--danger); }
+.empty { color: var(--muted); text-align: center; padding: 18px 0; }
