@@ -27,7 +27,7 @@ You can create `leetcode-attempts/` yourself, or let the extension create it on 
 ## 2. Install the Chrome extension
 
 1. Open `chrome://extensions` and turn on **Developer mode** (top right).
-2. Click **Load unpacked** and select the `leetcode-timer` folder.
+2. Click **Load unpacked** and select the `chrome-extension` folder.
 3. A settings tab opens. Click **Choose folder…** and pick your practice folder (the **parent** of `leetcode-attempts/`, not `leetcode-attempts/` itself).
 4. Leave **Subfolder** as `leetcode-attempts` unless you want a different name.
 5. Click **Write test file**. You should see `✓ Wrote LeetCode Practice/leetcode-attempts/_test.md`. If Chrome offers **Allow on every visit**, choose it so saves happen without asking.
