@@ -21,6 +21,12 @@ chrome.runtime.onInstalled.addListener(async ({ reason }) => {
   if (reason === "install") chrome.runtime.openOptionsPage();
   const tabs = await chrome.tabs.query({ url: "https://leetcode.com/*" });
   for (const t of tabs) injectInto(t.id);
+  await updateBadge(await getSession());
+});
+
+// The icon and badge reset when the browser restarts, so restore them from the session.
+chrome.runtime.onStartup.addListener(async () => {
+  await updateBadge(await getSession());
 });
 
 async function getSession() {
@@ -357,7 +363,15 @@ async function clearSession() {
   await updateBadge(null);
 }
 
+async function updateIcon(s) {
+  const name = s && s.status === "running" ? "icon-running" : "icon";
+  await chrome.action.setIcon({
+    path: { 16: `icons/${name}16.png`, 32: `icons/${name}32.png`, 48: `icons/${name}48.png` },
+  });
+}
+
 async function updateBadge(s) {
+  await updateIcon(s);
   if (!s || s.status === "done") {
     await chrome.action.setBadgeText({ text: "" });
     return;
